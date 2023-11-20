@@ -9,60 +9,64 @@ function playGame(totalAttempts) {
   let computerScore = 0;
   let attemptsLeft = 0;
 
-  console.log(`You have ${totalAttempts} attempts.`)
+  console.log(`You have ${totalAttempts} attempts.`);
 
   while (attemptsLeft < totalAttempts) {
     const playerSelection = prompt("Enter your choice").toLowerCase();
     const computerSelection = getComputerSelection();
 
     if (playerSelection === computerSelection) {
-      console.log("Draw")
-    } 
-    
-    else if (playerSelection === 'rock') {
-      if (computerSelection !== 'paper') {
-        console.log(`Player wins: ${playerSelection} beats ${computerSelection}`);
+      console.log("Draw");
+    } else if (playerSelection === "rock") {
+      if (computerSelection !== "paper") {
+        console.log(
+          `Player wins: ${playerSelection} beats ${computerSelection}`
+        );
         playerScore++;
         console.log(`${playerScore} : ${computerScore}`);
         attemptsLeft++;
       } else {
-        console.log(`Computer wins: ${computerSelection} beats ${playerSelection}`);
+        console.log(
+          `Computer wins: ${computerSelection} beats ${playerSelection}`
+        );
         computerScore++;
         console.log(`${playerScore} : ${computerScore}`);
-        attemptsLeft++
+        attemptsLeft++;
       }
-    } 
-
-    else if (playerSelection === 'paper') {
-      if (computerSelection !== 'scissors') {
-        console.log(`Player wins: ${playerSelection} beats ${computerSelection}`);
+    } else if (playerSelection === "paper") {
+      if (computerSelection !== "scissors") {
+        console.log(
+          `Player wins: ${playerSelection} beats ${computerSelection}`
+        );
         playerScore++;
         console.log(`${playerScore} : ${computerScore}`);
         attemptsLeft++;
       } else {
-        console.log(`Computer wins: ${computerSelection} beats ${playerSelection}`);
+        console.log(
+          `Computer wins: ${computerSelection} beats ${playerSelection}`
+        );
         computerScore++;
         console.log(`${playerScore} : ${computerScore}`);
-        attemptsLeft++
+        attemptsLeft++;
       }
-    }
-
-    else if (playerSelection === 'scissors') {
-      if (computerSelection !== 'rock') {
-        console.log(`Player wins: ${playerSelection} beats ${computerSelection}`);
+    } else if (playerSelection === "scissors") {
+      if (computerSelection !== "rock") {
+        console.log(
+          `Player wins: ${playerSelection} beats ${computerSelection}`
+        );
         playerScore++;
         console.log(`${playerScore} : ${computerScore}`);
         attemptsLeft++;
       } else {
-        console.log(`Computer wins: ${computerSelection} beats ${playerSelection}`);
+        console.log(
+          `Computer wins: ${computerSelection} beats ${playerSelection}`
+        );
         computerScore++;
         console.log(`${playerScore} : ${computerScore}`);
-        attemptsLeft++
+        attemptsLeft++;
       }
-    }
-
-    else {
-      console.log('Invalid choice.')
+    } else {
+      console.log("Invalid choice.");
       continue;
     }
   }
