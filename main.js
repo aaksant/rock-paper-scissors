@@ -1,8 +1,9 @@
 const choice = ['rock', 'paper', 'scissors'];
 
-const getComputerSelection = () => {
+function getComputerSelection() {
   return choice[Math.floor(Math.random() * choice.length)];
 };
+const compSelection = getComputerSelection();
 
 let playerScore = document.querySelector('.player-score');
 let compScore = document.querySelector('.comp-score');
@@ -22,14 +23,18 @@ rockButton.addEventListener('click', () => {
   let playerNewScore = Number(playerScore.textContent);
   let compNewScore = Number(compScore.textContent);
 
-  if (rockText === getComputerSelection()) {
+  if (rockText === compSelection) {
+    console.log(rockText);
+    console.log(compSelection);
     condition.textContent = 'draw';
     selections.textContent = `both pick ${rockText}`;
-  } else if (getComputerSelection() !== 'paper') {
+  } else if (compSelection !== 'paper') {
+    console.log(rockText);
+    console.log(compSelection);
     playerNewScore++;
     playerScore = playerNewScore;
     condition.textContent = 'you win';
-    selections.textContent = `rock beats ${getComputerSelection()}`;
+    selections.textContent = `rock beats ${compSelection}`;
   }
 });
 
