@@ -8,7 +8,6 @@ function playGame(totalAttempts) {
   let playerScore = 0;
   let computerScore = 0;
   let attemptsLeft = 0;
-
   console.log(`You have ${totalAttempts} attempts.`);
 
   while (attemptsLeft < totalAttempts) {
