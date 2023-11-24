@@ -1,2 +1,2 @@
 # rock-paper-scissors
-Create a console-based beginner rock paper scissors game from scratch.
+Create a simple UI for rock paper scissors game.
