@@ -1,83 +1,41 @@
-const choice = ["rock", "paper", "scissors"];
+const choice = ['rock', 'paper', 'scissors'];
 
-function getComputerSelection() {
+const getComputerSelection = () => {
   return choice[Math.floor(Math.random() * choice.length)];
-}
+};
 
-function playGame(totalAttempts) {
-  let playerScore = 0;
-  let computerScore = 0;
-  let attemptsLeft = 0;
+let playerScore = document.querySelector('.player-score');
+let compScore = document.querySelector('.comp-score');
 
-  console.log(`You have ${totalAttempts} attempts.`);
+const rockButton = document.querySelector('.rock');
+const paperButton = document.querySelector('.paper');
+const scissorsButton = document.querySelector('.scissors');
 
-  while (attemptsLeft < totalAttempts) {
-    const playerSelection = prompt("Enter your choice").toLowerCase();
-    const computerSelection = getComputerSelection();
+const rockText = rockButton.textContent.toLowerCase();
+const paperText = paperButton.textContent.toLowerCase();
+const scissorsText = scissorsButton.textContent.toLowerCase();
 
-    if (playerSelection === computerSelection) {
-      console.log("Draw");
-    } else if (playerSelection === "rock") {
-      if (computerSelection !== "paper") {
-        console.log(
-          `Player wins: ${playerSelection} beats ${computerSelection}`
-        );
-        playerScore++;
-        console.log(`${playerScore} : ${computerScore}`);
-        attemptsLeft++;
-      } else {
-        console.log(
-          `Computer wins: ${computerSelection} beats ${playerSelection}`
-        );
-        computerScore++;
-        console.log(`${playerScore} : ${computerScore}`);
-        attemptsLeft++;
-      }
-    } else if (playerSelection === "paper") {
-      if (computerSelection !== "scissors") {
-        console.log(
-          `Player wins: ${playerSelection} beats ${computerSelection}`
-        );
-        playerScore++;
-        console.log(`${playerScore} : ${computerScore}`);
-        attemptsLeft++;
-      } else {
-        console.log(
-          `Computer wins: ${computerSelection} beats ${playerSelection}`
-        );
-        computerScore++;
-        console.log(`${playerScore} : ${computerScore}`);
-        attemptsLeft++;
-      }
-    } else if (playerSelection === "scissors") {
-      if (computerSelection !== "rock") {
-        console.log(
-          `Player wins: ${playerSelection} beats ${computerSelection}`
-        );
-        playerScore++;
-        console.log(`${playerScore} : ${computerScore}`);
-        attemptsLeft++;
-      } else {
-        console.log(
-          `Computer wins: ${computerSelection} beats ${playerSelection}`
-        );
-        computerScore++;
-        console.log(`${playerScore} : ${computerScore}`);
-        attemptsLeft++;
-      }
-    } else {
-      console.log("Invalid choice.");
-      continue;
-    }
+const condition = document.querySelector('.condition');
+const selections = document.querySelector('.selections');
+
+rockButton.addEventListener('click', () => {
+  let playerNewScore = Number(playerScore.textContent);
+  let compNewScore = Number(compScore.textContent);
+
+  if (rockText === getComputerSelection()) {
+    condition.textContent = 'draw';
+    selections.textContent = `both pick ${rockText}`;
+  } else if (getComputerSelection() !== 'paper') {
+    playerNewScore++;
+    playerScore = playerNewScore;
+    condition.textContent = 'you win';
+    selections.textContent = `rock beats ${getComputerSelection()}`;
   }
+});
 
-  if (playerScore == computerScore) {
-    console.log("Draw, what a boring game.");
-  } else if (playerScore > computerScore) {
-    console.log("You win!");
-  } else {
-    console.log("You lose!");
-  }
-}
+paperButton.addEventListener('click', () => {
+  let playerNewScore = Number(playerScore.textContent);
+  let compNewScore = Number(compScore.textContent);
 
-// playGame(5);
+
+});

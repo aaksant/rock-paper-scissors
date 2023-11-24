@@ -36,7 +36,8 @@ body {
   font-size: 64px;
 }
 
-.score {
+.player-score,
+.comp-score {
   font-size: 128px;
 }
 
@@ -52,4 +53,14 @@ body {
   height: 50px;
   width: 150px;
   font-size: 24px;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 32px;
+  gap: 24px;
+  font-size: 36px;
 }
