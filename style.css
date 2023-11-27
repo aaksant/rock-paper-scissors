@@ -9,7 +9,7 @@ html {
 }
 
 body {
-  margin: 0;
+  margin: 48px auto;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -33,12 +33,12 @@ body {
 }
 
 .context {
-  font-size: 64px;
+  font-size: 48px;
 }
 
 .player-score,
 .comp-score {
-  font-size: 128px;
+  font-size: 96px;
 }
 
 .buttons {
@@ -49,10 +49,11 @@ body {
 
 .rock,
 .paper,
-.scissors {
-  height: 50px;
-  width: 150px;
-  font-size: 24px;
+.scissors,
+.reset {
+  height: 30px;
+  width: 100px;
+  font-size: 16px;
 }
 
 .result {
@@ -62,5 +63,5 @@ body {
   justify-content: center;
   margin-top: 32px;
   gap: 24px;
-  font-size: 36px;
+  font-size: 24px;
 }
